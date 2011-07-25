@@ -1,0 +1,119 @@
+object Form1: TForm1
+  Left = 345
+  Height = 41
+  Top = 388
+  Width = 463
+  BorderStyle = bsNone
+  Caption = 'Form1'
+  ClientHeight = 41
+  ClientWidth = 463
+  Color = clBlack
+  FormStyle = fsSystemStayOnTop
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PopupMenu = PopupMenu1
+  LCLVersion = '0.9.31'
+  object Label1: TLabel
+    Left = 0
+    Height = 41
+    Top = 0
+    Width = 463
+    Align = alClient
+    Caption = 'Subtitle viewer'#10'...'
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    PopupMenu = PopupMenu1
+    OnClick = Label1Click
+  end
+  object PopupMenu1: TPopupMenu
+    left = 192
+    top = 7
+    object MenuItem2: TMenuItem
+      Caption = 'Load srt...'
+      OnClick = MenuItem2Click
+    end
+    object MenuItem8: TMenuItem
+      Caption = 'Sync...'
+      OnClick = MenuItem8Click
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Font...'
+      OnClick = MenuItem3Click
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'Alignment:'
+      OnClick = MenuItem1Click
+      object MenuItem5: TMenuItem
+        Caption = 'Left'
+        OnClick = MenuItem5Click
+      end
+      object MenuItem6: TMenuItem
+        Caption = 'Center'
+        OnClick = MenuItem6Click
+      end
+      object MenuItem4: TMenuItem
+        Caption = 'Right'
+        OnClick = MenuItem4Click
+      end
+    end
+    object MenuItem9: TMenuItem
+      Caption = 'Font color...'
+      OnClick = MenuItem9Click
+    end
+    object MenuItem10: TMenuItem
+      Caption = 'Bg color'
+      OnClick = MenuItem10Click
+    end
+    object MenuItem7: TMenuItem
+      Caption = 'Close'
+      OnClick = MenuItem7Click
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    left = 159
+    top = 18
+  end
+  object FontDialog1: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    left = 215
+    top = 20
+  end
+  object Timer1: TTimer
+    Interval = 100
+    OnTimer = Timer1Timer
+    left = 96
+    top = 21
+  end
+  object ColorDialog1: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    left = 303
+    top = 23
+  end
+end
