@@ -3,11 +3,11 @@
   <ProjectOptions>
     <Version Value="9"/>
     <General>
+      <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
-      <ActiveWindowIndexAtStart Value="0"/>
     </General>
     <i18n>
       <EnableI18N LFM="False"/>
@@ -15,7 +15,7 @@
     <VersionInfo>
       <StringTable ProductVersion=""/>
     </VersionInfo>
-    <BuildModes Count="1" Active="Default">
+    <BuildModes Count="1">
       <Item1 Name="Default" Default="True"/>
     </BuildModes>
     <PublishOptions>
@@ -34,17 +34,11 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="11">
+    <Units Count="4">
       <Unit0>
         <Filename Value="subtitleviewer.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="subtitleviewer"/>
-        <EditorIndex Value="3"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="26"/>
-        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="subtitleviewerform.pas"/>
@@ -52,14 +46,6 @@
         <ComponentName Value="Form1"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="subtitleviewerform"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="94"/>
-        <CursorPos X="32" Y="97"/>
-        <UsageCount Value="26"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="subtitlesync.pas"/>
@@ -67,160 +53,13 @@
         <ComponentName Value="Form2"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="subtitlesync"/>
-        <EditorIndex Value="1"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="76"/>
-        <CursorPos X="31" Y="96"/>
-        <UsageCount Value="26"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="subtitle.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="subtitle"/>
-        <EditorIndex Value="0"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="27"/>
-        <CursorPos X="1" Y="63"/>
-        <UsageCount Value="26"/>
-        <Loaded Value="True"/>
       </Unit3>
-      <Unit4>
-        <Filename Value="../../../../opt/fpc-2.4.4/rtl/objpas/sysutils/sysstrh.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="209"/>
-        <CursorPos X="10" Y="227"/>
-        <UsageCount Value="12"/>
-      </Unit4>
-      <Unit5>
-        <Filename Value="../../../../opt/fpc-2.4.4/rtl/objpas/sysutils/sysstr.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="2979"/>
-        <CursorPos X="44" Y="2991"/>
-        <UsageCount Value="12"/>
-      </Unit5>
-      <Unit6>
-        <Filename Value="../../../../opt/fpc-2.4.4/rtl/objpas/classes/classesh.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="659"/>
-        <CursorPos X="67" Y="666"/>
-        <UsageCount Value="11"/>
-      </Unit6>
-      <Unit7>
-        <Filename Value="../../../../opt/fpc-2.4.4/rtl/inc/ustringh.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="82"/>
-        <CursorPos X="75" Y="89"/>
-        <UsageCount Value="11"/>
-      </Unit7>
-      <Unit8>
-        <Filename Value="/opt/lazarus/lcl/forms.pp"/>
-        <UnitName Value="Forms"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="53"/>
-        <CursorPos X="85" Y="60"/>
-        <UsageCount Value="10"/>
-      </Unit8>
-      <Unit9>
-        <Filename Value="/opt/lazarus/lcl/lclproc.pas"/>
-        <UnitName Value="LCLProc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1524"/>
-        <CursorPos X="21" Y="1540"/>
-        <UsageCount Value="10"/>
-      </Unit9>
-      <Unit10>
-        <Filename Value="/opt/lazarus/lcl/lclstrconsts.pas"/>
-        <UnitName Value="LCLStrConsts"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="234"/>
-        <CursorPos X="3" Y="252"/>
-        <UsageCount Value="10"/>
-      </Unit10>
     </Units>
-    <JumpHistory Count="20" HistoryIndex="19">
-      <Position1>
-        <Filename Value="subtitlesync.pas"/>
-        <Caret Line="122" Column="62" TopLine="104"/>
-      </Position1>
-      <Position2>
-        <Filename Value="subtitlesync.pas"/>
-        <Caret Line="124" Column="8" TopLine="106"/>
-      </Position2>
-      <Position3>
-        <Filename Value="subtitlesync.pas"/>
-        <Caret Line="125" Column="3" TopLine="105"/>
-      </Position3>
-      <Position4>
-        <Filename Value="subtitlesync.pas"/>
-        <Caret Line="127" Column="39" TopLine="109"/>
-      </Position4>
-      <Position5>
-        <Filename Value="subtitlesync.pas"/>
-        <Caret Line="125" Column="1" TopLine="109"/>
-      </Position5>
-      <Position6>
-        <Filename Value="subtitlesync.pas"/>
-        <Caret Line="126" Column="1" TopLine="109"/>
-      </Position6>
-      <Position7>
-        <Filename Value="subtitlesync.pas"/>
-        <Caret Line="137" Column="55" TopLine="109"/>
-      </Position7>
-      <Position8>
-        <Filename Value="subtitlesync.pas"/>
-        <Caret Line="139" Column="3" TopLine="117"/>
-      </Position8>
-      <Position9>
-        <Filename Value="subtitlesync.pas"/>
-        <Caret Line="109" Column="70" TopLine="107"/>
-      </Position9>
-      <Position10>
-        <Filename Value="subtitle.pas"/>
-        <Caret Line="19" Column="1" TopLine="19"/>
-      </Position10>
-      <Position11>
-        <Filename Value="subtitle.pas"/>
-        <Caret Line="99" Column="1" TopLine="63"/>
-      </Position11>
-      <Position12>
-        <Filename Value="subtitlesync.pas"/>
-        <Caret Line="83" Column="21" TopLine="76"/>
-      </Position12>
-      <Position13>
-        <Filename Value="subtitle.pas"/>
-        <Caret Line="20" Column="18" TopLine="1"/>
-      </Position13>
-      <Position14>
-        <Filename Value="subtitleviewerform.pas"/>
-        <Caret Line="124" Column="14" TopLine="99"/>
-      </Position14>
-      <Position15>
-        <Filename Value="subtitleviewerform.pas"/>
-        <Caret Line="93" Column="36" TopLine="74"/>
-      </Position15>
-      <Position16>
-        <Filename Value="subtitleviewerform.pas"/>
-        <Caret Line="94" Column="36" TopLine="75"/>
-      </Position16>
-      <Position17>
-        <Filename Value="subtitleviewerform.pas"/>
-        <Caret Line="96" Column="36" TopLine="77"/>
-      </Position17>
-      <Position18>
-        <Filename Value="subtitleviewerform.pas"/>
-        <Caret Line="135" Column="2" TopLine="109"/>
-      </Position18>
-      <Position19>
-        <Filename Value="subtitleviewerform.pas"/>
-        <Caret Line="136" Column="6" TopLine="110"/>
-      </Position19>
-      <Position20>
-        <Filename Value="subtitleviewerform.pas"/>
-        <Caret Line="144" Column="1" TopLine="116"/>
-      </Position20>
-    </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="10"/>
