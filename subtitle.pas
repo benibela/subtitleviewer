@@ -76,11 +76,12 @@ var i, index: integer;
     temp: String;
 begin
   index := 0;
+  state := sExpectRecord;;
   for i:=0 to sl.Count-1 do begin
     case state of
       sExpectRecord: begin
         if sl[i] = '' then continue;
-        if strtoint(Trim(sl[i])) < index+1 then raise Exception.Create('unexpected index: "'+trim(sl[i]) + '" expected "'+inttostr(index+1)+'"');
+        if (strtoint(Trim(sl[i])) < index+1) and (sl[i] <> '0') then raise Exception.Create('unexpected index: "'+trim(sl[i]) + '" expected "'+inttostr(index+1)+'"');
         inc(index);
         inc(state);
       end;
