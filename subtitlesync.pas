@@ -15,11 +15,13 @@ type
    Button1: TButton;
    Button2: TButton;
    CheckBox1: TCheckBox;
+   usedatapoints: TCheckBox;
    Edit1: TEdit;
    FloatSpinEdit1: TFloatSpinEdit;
    Label1: TLabel;
    Label2: TLabel;
    ListBox1: TListBox;
+   ListBox2: TListBox;
    Panel1: TPanel;
    Panel2: TPanel;
    Panel3: TPanel;
@@ -34,6 +36,9 @@ type
    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
    procedure ListBox1Click(Sender: TObject);
    procedure ListBox1DblClick(Sender: TObject);
+   procedure ListBox1DragDrop(Sender, Source: TObject; X, Y: Integer);
+   procedure ListBox2Click(Sender: TObject);
+   procedure ListBox2DblClick(Sender: TObject);
    procedure SpinEdit1Change(Sender: TObject);
   private
     { private declarations }
@@ -41,8 +46,11 @@ type
    lastspeed: double;
   public
     { public declarations }
-    procedure setSubTitles(t: TSubTitleList);
-  end; 
+    datapoints: array of record
+      measured, real: double;
+    end;
+   procedure setSubTitles(t: TSubTitleList);
+  end;
 
 var
   Form2: TForm2; 
@@ -129,11 +137,63 @@ procedure TForm2.ListBox1DblClick(Sender: TObject);
 
 var
  i: Integer;
+ crossvariance, variance: Extended;
+ meanmeasured, meanreal: extended;
 begin
   i := ListBox1.ItemIndex;
   if i = -1 then exit;
-  SpinEdit1.Value:= round((title.titles[i].fromtime  + (-now + title.hiddenOffset)* title.scale)*24*60*60*1000);
+  if not usedatapoints.Checked then begin
+    SpinEdit1.Value:= round((title.titles[i].fromtime  + (-now + title.hiddenOffset)* title.scale)*24*60*60*1000);
+  end else begin
+    setlength(datapoints,length(datapoints)+1);
+    datapoints[high(datapoints)].measured := now - title.hiddenOffset ;
+    datapoints[high(datapoints)].real:=title.titles[i].fromtime;
+    ListBox2.Items.add(FloatToStr(datapoints[high(datapoints)].measured)+':'+FloatToStr(datapoints[high(datapoints)].real));
+
+    meanmeasured := 0;
+    meanreal := 0;
+    for i:=0 to high(datapoints) do begin
+      meanmeasured+=datapoints[i].measured;
+      meanreal+=datapoints[i].real;
+    end;
+    meanmeasured/=length(datapoints);
+    meanreal/=length(datapoints);
+
+    if length(datapoints) > 1 then begin
+
+      crossvariance := 0.0;
+      variance:=0.0;
+      for i:=0 to high(datapoints) do begin
+        crossvariance+=(datapoints[i].real-meanreal)*(datapoints[i].measured-meanmeasured);
+        variance+=sqr(datapoints[i].measured - meanmeasured);
+      end;
+
+      FloatSpinEdit1.Value:=crossvariance/variance;
+    end;
+
+    SpinEdit1.Value:= round((meanreal  - meanmeasured* FloatSpinEdit1.Value)*24*60*60*1000)
+  end;
   SpinEdit1Change(SpinEdit1);
+end;
+
+procedure TForm2.ListBox1DragDrop(Sender, Source: TObject; X, Y: Integer);
+begin
+
+end;
+
+procedure TForm2.ListBox2Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm2.ListBox2DblClick(Sender: TObject);
+begin
+  if ListBox2.ItemIndex<0 then exit;
+  if listbox2.ItemIndex = high(datapoints) then setlength(datapoints, high(datapoints))
+  else begin
+    move(datapoints[listbox2.ItemIndex+1], datapoints[listbox2.ItemIndex], (high(datapoints) - listbox2.ItemIndex) * sizeof(datapoints[0]));
+  end;
+  ListBox2.Items.Delete(listbox2.ItemIndex);
 end;
 
 procedure TForm2.SpinEdit1Change(Sender: TObject);
