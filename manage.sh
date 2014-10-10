@@ -2,7 +2,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $DIR/../../../manageUtils.sh
 
-githubProject subtitleviewer
+mirroredProject subtitleviewer
 
 BASE=$HGROOT/programs/data/subtitleviewer
 
